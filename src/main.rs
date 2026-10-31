@@ -8,6 +8,7 @@ fn main() -> anyhow::Result<()> {
 
     for result in reader.deserialize() {
         let record: LineItem = result?;
+        let _not_used = record.description;
         total += record.usd;
     }
 
@@ -26,6 +27,7 @@ struct Args {
 
 #[derive(Debug, Deserialize)]
 struct LineItem {
+    #[serde(rename = "USD")]
     usd: f64,
-    _description: String,
+    description: String,
 }
