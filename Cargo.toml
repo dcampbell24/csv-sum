@@ -1,0 +1,18 @@
+[package]
+name = "csv-sum"
+version = "0.1.0"
+edition = "2024"
+description = "Sums the values in the first column of a csv file."
+license = "MIT"
+# repository = ""
+keywords = ["csv", "sum"]
+categories = ["command-line-utilities","text-processing"]
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+serde = { version = "1", features = ["derive"] }
+
+[lints.clippy]
+cargo = "deny"
