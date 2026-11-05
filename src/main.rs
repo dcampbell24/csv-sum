@@ -3,7 +3,7 @@ use serde::Deserialize;
 
 fn main() -> anyhow::Result<()> {
     let args = Args::parse();
-    let mut reader = csv::Reader::from_path(args.path)?;
+    let mut reader = csv::Reader::from_path(args.load)?;
     let mut total = 0.0;
 
     for result in reader.deserialize() {
