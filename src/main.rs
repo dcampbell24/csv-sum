@@ -23,7 +23,7 @@ fn main() -> anyhow::Result<()> {
 struct Args {
     /// The path to the CSV file
     #[arg(long)]
-    path: String,
+    load: String,
 }
 
 #[derive(Debug, Deserialize)]
